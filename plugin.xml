@@ -28,7 +28,11 @@
     </config-file>
 
     <config-file target="AndroidManifest.xml" parent="/*">
-      <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+      
+      <!-- Grants the READ_PHONE_STATE permission only on devices that run
+         Android 10 (API level 29) and lower.  https://developer.android.com/about/versions/11/privacy/permissions?hl=es-419 -->
+      <uses-permission android:name="READ_PHONE_STATE" />
+      <uses-permission android:name="READ_PHONE_NUMBERS" /> 
     </config-file>
 
     <source-file src="src/android/com/pbakondy/Sim.java" target-dir="src/com/pbakondy" />
